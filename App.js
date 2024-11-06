@@ -40,12 +40,11 @@ const App = () => {
   return (
       <View style={styles.container}>
         <View style={styles.header}>
-          <Icon name="sait-boat" size={20} color="#000" style={styles.icon}> {/* Use correct icon name */}
+          <Icon name="sait-boat" size={24} color="#fff" style={styles.icon} />
           <Text style={styles.headerText}>GetABoat - For Sale</Text>
-          </Icon>
         </View>
 
-        <ScrollView>
+        <ScrollView contentContainerStyle={styles.scrollContainer}>
           {boats.map((boat, index) => (
               <Boat key={index} {...boat} />
           ))}
@@ -57,24 +56,29 @@ const App = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 10,
     backgroundColor: '#ffffff',
+    marginTop: 40,
   },
   header: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    marginBottom: 10,
-    paddingTop: 40,
+    backgroundColor: '#808080',
+    paddingVertical: 15,
+    marginBottom: 15,
   },
   icon: {
-    marginRight: 5,
+    marginRight: 10,
   },
   headerText: {
-    fontSize: 24,
+    fontSize: 28,
     fontWeight: 'bold',
-  }
+    color: '#fff',
+  },
+  scrollContainer: {
+    paddingHorizontal: 15,
+    paddingBottom: 20,
+  },
 });
 
 export default App;
-
